@@ -1,0 +1,421 @@
+/* 
+   Advanced & Stylish Design System for Genet Tsegay's Portfolio
+   Theme: Girly Stylish Professional (Blue Focused)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-soft: #dbeafe;
+    --primary-dark: #1e3a8a;
+    --secondary: #3b82f6;
+    --accent: #93c5fd;
+    --bg-light: #fdfdff; /* Softer off-white */
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.8);
+    --shadow-soft: 0 10px 30px -5px rgba(37, 99, 235, 0.1);
+    --shadow-hover: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* HEADER & HERO */
+.top-header {
+    background-color: var(--primary); /* Solid high-contrast blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    color: #ffffff; /* Explicitly white */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #ffffff !important; /* Forces white color for absolute visibility */
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+/* NAVIGATION */
+#navbar {
+    background-color: var(--glass);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 24px 28px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links li a:hover, 
+.nav-links li a.active {
+    color: var(--primary);
+    background-color: #f0f7ff;
+    border-radius: 50px;
+}
+
+.nav-links li a.active::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: var(--primary);
+    margin: 4px auto 0;
+    border-radius: 10px;
+}
+
+/* MOBILE NAV TOGGLE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* MAIN CONTENT */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.content-card {
+    background: var(--white);
+    border-radius: 30px; /* Softer corners */
+    padding: 60px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 60px;
+    border: 1px solid rgba(37, 99, 235, 0.05);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-soft);
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+.section-title {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin: 45px 0 20px;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 24px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* IMAGES */
+.image-wrapper {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 300px; /* Reduced from 450px for better fit */
+    height: auto;
+    border-radius: 40px; /* Stylish soft rounded look */
+    border: 12px solid var(--white);
+    box-shadow: var(--shadow-hover);
+    transition: transform 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+}
+
+/* TABLES */
+.table-responsive {
+    overflow-x: auto;
+    margin: 40px 0;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th {
+    background-color: #eff6ff;
+    color: var(--primary-dark);
+    text-align: left;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+td {
+    padding: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: var(--text-muted);
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+/* SKILLS - Advanced Stylish Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(37, 99, 235, 0.05);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-soft);
+}
+
+.skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.summary-box {
+    margin-top: 50px;
+    padding: 35px;
+    background: #f8fbff;
+    border-radius: 24px;
+    border: 1px solid var(--primary-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+/* CONTACT FORM */
+.contact-form {
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: var(--primary-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    background: #f8fafc;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: flex-end; /* Align burger to the right */
+        height: 70px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: var(--shadow-soft);
+        z-index: 999;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid #f8fafc;
+        border-radius: 0; /* Clear pill shape on mobile list */
+    }
+
+    .nav-links li a.active::after {
+        display: none; /* Hide underline on mobile for better menu layout */
+    }
+
+    .top-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .content-card {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+}
